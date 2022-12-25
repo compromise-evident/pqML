@@ -1,0 +1,15 @@
+pqML log
+
+
+
+Version 1.0.1   Added time report for every model update.  Tested training on 20
+                items and brought  misclassification down to 2 so it works well.
+                Saturday, December 24 2022
+
+Version 1.0.0   A voting kind of model-training system;  all  training items are
+                run through the model in 1 pass then misclassification is logged
+                and compared to another pass with a  modification  to the model.
+                Improved models overwrite current model and changes to the model
+                are never reverted. This way,  there is never  exhaustion, which
+                would force each model character to be modified too deeply.
+                Saturday, November 5 2022
