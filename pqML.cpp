@@ -2,14 +2,15 @@
 /// Nikolay Valentinovich Repnitskiy - License: WTFPLv2+ (wtfpl.net)
 
 
-/* Version 1.0.1. Purpose: if primes can be recognized, so might semiprimes. And
+/* Version 2.0.0. Purpose: if primes can be recognized, so might semiprimes. And
 if that, perhaps their factors. Otherwise, this would serve as pretty-good-proof
 that semiprimes are without reversal shortcuts; desirable  outcome  is  failure!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-pqML trains on 10,000 items per pass  (5,000 primes & composites,)  modifies the
-model, runs through  10,000  items again, then compares misclassification count.
-Improved models overwrite the last. Training on  20  items had misclassification
-down to 2 in 5 minutes. Training on the default  10,000 items takes much longer.
+pqML trains on all n items per pass (half primes, half composites,) modifies the
+model, runs through all n items again, and compares the misclassification count.
+Models yielding less misclassification overwrite the last best model, and so on.
+Model changes are first exhausted with 1 char + reversion,  then does not revert
+& begins exhausting changes with a new char. Number of modified chars increases.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 How to run the program  -  Software package repositories for GNU+Linux operating
 systems have all the tools you can imagine. Open a terminal and use this command
@@ -39,8 +40,9 @@ using namespace std;
 int main()
 {	cout << "\n(pq Machine Learning)\n\n"
 	
-	     << "(1) Train\n"
-	     << "(2) Test\n\n"
+	     << "(1) Train on    100 items.\n"
+	     << "(2) Train on 10,000 items.\n"
+	     << "(3) Test\n\n"
 	
 	     << "Enter option: ";
 	
@@ -54,7 +56,7 @@ int main()
 	
 	//_____________________________________________________________________________________________________________________
 	//________________________________________________________Train_______________________________________________________/
-	if(user_option == 1)
+	if((user_option == 1) || (user_option == 2))
 	{	//Checks if training data is missing.
 		in_stream.open("Training_data");
 		if(in_stream.fail() == true) {cout << "\nMissing file \"Training_data\""; in_stream.close(); return 0;}
@@ -147,9 +149,9 @@ int main()
 		for(int a = 0; a <  2; a++) {in_stream.get(output_model  [a]); output_model  [a] -= 32;}
 		in_stream.close();
 		
-		//Prints model, then prints IMPROVED models while training (improvements are also overwritten to file "Model".)
+		//Prints model, later prints IMPROVED models while training (improvements are also overwritten to file "Model".)
 		cout << "\nExit/continue at any time. Updating model changes until no misclassification...\n\n";
-		cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+		cout << "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 		system("date");
 		cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 		cout << "Current model: ";
@@ -161,9 +163,15 @@ int main()
 		
 		//Loads training data.
 		in_stream.open("Training_data");
-		char training_data[180000];
+		int number_of_training_items = 10000;
+		if(user_option == 1)
+		{	for(int a = 0; a < 94050; a++) {in_stream.get(garbage_byte);} //..........Skips 1st 4,950 items so the next 100 are 50 primes & 50 composites.
+			number_of_training_items = 100;
+		}
+		
+		char training_data[180000] = {0};
 		int training_data_write_bookmark = 0;
-		for(int a = 0; a < 10000; a++)
+		for(int a = 0; a < number_of_training_items; a++)
 		{	for(int b = 0; b < 18; b++)
 			{	in_stream.get(training_data[training_data_write_bookmark]);
 				training_data[training_data_write_bookmark] -= 48; //..........-48 means actual value of digit.
@@ -173,12 +181,12 @@ int main()
 		}
 		in_stream.close();
 		
-		//Runs all 10,000 items through the model once to set initial misclassification count so it can be compared upon changes to the model.
+		//Runs all 100 or 10,000 items through the model once to set initial misclassification count so it can be compared upon changes to the model.
 		int misclassification_log[10000];
 		int misclassification_counter = 0;
 		int training_data_read_bookmark = 0;
 		int fire[18];
-		for(int a = 0; a < 10000; a++)
+		for(int a = 0; a < number_of_training_items; a++)
 		{	//..........Loading fire[] with 18 digits.
 			for(int b = 0; b < 18; b++)
 			{	fire[b] = training_data[training_data_read_bookmark];
@@ -226,48 +234,55 @@ int main()
 		}
 		
 		//..........Prints misclassification for current model. This log also exists for future pinning of who's misclassified.
-		for(int a = 0; a < 5000; a++)
-		{	if(misclassification_log[a] != 1) {misclassification_counter++;} //..........First 5,000 must be classified under prime.
+		if(user_option == 1)
+		{	for(int a = 0; a < 50; a++)
+			{	if(misclassification_log[a] != 1) {misclassification_counter++;} //..........First 50 must be classified under prime.
+			}
+			
+			for(int a = 50; a < 100; a++)
+			{	if(misclassification_log[a] != 0) {misclassification_counter++;} //..........Remaining 50 must be classified under composite.
+			}
+			
+			cout << "Misclassifies: " << misclassification_counter << " of 100 training items.\n\n";
+		}
+		else
+		{	for(int a = 0; a < 5000; a++)
+			{	if(misclassification_log[a] != 1) {misclassification_counter++;} //..........First 5,000 must be classified under prime.
+			}
+			
+			for(int a = 5000; a < 10000; a++)
+			{	if(misclassification_log[a] != 0) {misclassification_counter++;} //..........Remaining 5,000 must be classified under composite.
+			}
+			
+			cout << "Misclassifies: " << misclassification_counter << " of 10000 training items.\n\n";
 		}
 		
-		for(int a = 5000; a < 10000; a++)
-		{	if(misclassification_log[a] != 0) {misclassification_counter++;} //..........Remaining 5,000 must be classified under composite.
-		}
 		
-		cout << "Misclassifies: " << misclassification_counter << " of 10000 training items.\n\n";
 		
-		//Loops: model modification, another pass of all 10,000 training items. Improved model is saved.
+		
+		
+		//Loops: model modification, another pass of all 100 or 10,000 training items. Improved model is saved.
 		srand(time(0));
 		int best_misclassification = misclassification_counter;
+		int exhaustion_counter = 0;
 		for(; misclassification_counter > 0;)
-		{	//..........Randomly modifies a model neuron (no reversion even if modification unhelpful;
-			//..........reversion without modifying deeply, exhausts--leaving no room for improvement.
+		{	//..........Randomly modifies a model neuron (WITH reversion if modification unhelpful;
 			int random_layer  = (rand() %  4); random_layer++;
 			int random_neuron = (rand() % 18);
 			int random_output = (rand() %  2);
+			int random_VALUE  = (rand() % 95);
+			int temp_random_VALUE;
 			
-			if(random_layer == 1)
-			{	input_model[random_neuron]++;
-				input_model[random_neuron] %= 95;
-			}
-			else if(random_layer == 2)
-			{	hidden_1_model[random_neuron]++;
-				hidden_1_model[random_neuron] %= 95;
-			}
-			else if(random_layer == 3)
-			{	hidden_2_model[random_neuron]++;
-				hidden_2_model[random_neuron] %= 95;
-			}
-			else
-			{	output_model[random_output]++;
-				output_model[random_output] %= 95;
-			}
+			if     (random_layer == 1) {temp_random_VALUE = input_model   [random_neuron]; input_model   [random_neuron] = random_VALUE;}
+			else if(random_layer == 2) {temp_random_VALUE = hidden_1_model[random_neuron]; hidden_1_model[random_neuron] = random_VALUE;}
+			else if(random_layer == 3) {temp_random_VALUE = hidden_2_model[random_neuron]; hidden_2_model[random_neuron] = random_VALUE;}
+			else                       {temp_random_VALUE = output_model  [random_output]; output_model  [random_output] = random_VALUE;}
 			
-			//..........Runs all 10,000 training items through the model again.
+			//..........Runs all 100 or 10,000 training items through the model again.
 			int misclassification_counter = 0;
 			int training_data_read_bookmark = 0;
 			int fire[18];
-			for(int a = 0; a < 10000; a++)
+			for(int a = 0; a < number_of_training_items; a++)
 			{	//..........Loading fire[] with 18 digits.
 				for(int b = 0; b < 18; b++)
 				{	fire[b] = training_data[training_data_read_bookmark];
@@ -315,12 +330,23 @@ int main()
 			}
 			
 			//..........Counts misclassification.
-			for(int a = 0; a < 5000; a++)
-			{	if(misclassification_log[a] != 1) {misclassification_counter++;} //..........First 5,000 must be classified under prime.
+			if(user_option == 1)
+			{	for(int a = 0; a < 50; a++)
+				{	if(misclassification_log[a] != 1) {misclassification_counter++;} //..........First 50 must be classified under prime.
+				}
+				
+				for(int a = 50; a < 100; a++)
+				{	if(misclassification_log[a] != 0) {misclassification_counter++;} //..........Remaining 50 must be classified under composite.
+				}
 			}
-			
-			for(int a = 5000; a < 10000; a++)
-			{	if(misclassification_log[a] != 0) {misclassification_counter++;} //..........Remaining 5,000 must be classified under composite.
+			else
+			{	for(int a = 0; a < 5000; a++)
+				{	if(misclassification_log[a] != 1) {misclassification_counter++;} //..........First 5,000 must be classified under prime.
+				}
+				
+				for(int a = 5000; a < 10000; a++)
+				{	if(misclassification_log[a] != 0) {misclassification_counter++;} //..........Remaining 5,000 must be classified under composite.
+				}
 			}
 			
 			//..........Compares misclassification to previous.
@@ -337,7 +363,7 @@ int main()
 				out_stream.close();
 				
 				//..........Prints model.
-				cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+				cout << "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 				system("date");
 				cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 				cout << "Updated model: ";
@@ -347,8 +373,23 @@ int main()
 				cout << char(output_model[0] + 32)<< char(output_model  [1] + 32);
 				cout << "\n";
 				
-				cout << "Misclassifies: " << misclassification_counter << " of 10000 training items.\n\n";
+				if(user_option == 1) {cout << "Misclassifies: " << misclassification_counter <<   " of 100 training items.\n\n";}
+				else                 {cout << "Misclassifies: " << misclassification_counter << " of 10000 training items.\n\n";}
+				
+				exhaustion_counter = 0;
 			}
+			else //..........Reverts model change if unhelpful.
+			{	if(exhaustion_counter < 5320) //Does not revert if exhausted tries, keeps last try and continues with another until exhausted and so on (2+ char changes.)
+				{	if     (random_layer == 1) {input_model   [random_neuron] = temp_random_VALUE;}
+					else if(random_layer == 2) {hidden_1_model[random_neuron] = temp_random_VALUE;}
+					else if(random_layer == 3) {hidden_2_model[random_neuron] = temp_random_VALUE;}
+					else                       {output_model  [random_output] = temp_random_VALUE;}
+				}
+				
+				exhaustion_counter++;
+			}
+			
+			if(exhaustion_counter > 5320) {exhaustion_counter = 0;}
 		}
 	}
 	
