@@ -2,6 +2,16 @@ pqML log
 
 
 
+Version 2.0.0   Train on 100 items or 10,000--user's  choice.  Switching between
+                the two will modify the model accordingly, mostly improving both
+                but starting from a worse position.  Now REVERTS if model change
+                unhelpful.Now exhausts change of 1 model char then leaves change
+                and begins exhausting another;number of modified chars continues
+                to grow but slow: not so wastefully as v1 but allows exhaustion.
+                This gives better performance. Training on  100  still retrieves
+                its items from the original 190kB Training_data file.
+                Monday, December 26 2022
+
 Version 1.0.1   Added time report for every model update.  Tested training on 20
                 items and brought  misclassification down to 2 so it works well.
                 Saturday, December 24 2022
