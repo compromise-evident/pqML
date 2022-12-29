@@ -2,7 +2,7 @@
 /// Nikolay Valentinovich Repnitskiy - License: WTFPLv2+ (wtfpl.net)
 
 
-/* Version 2.0.0. Purpose: if primes can be recognized, so might semiprimes. And
+/* Version 2.0.1. Purpose: if primes can be recognized, so might semiprimes. And
 if that, perhaps their factors. Otherwise, this would serve as pretty-good-proof
 that semiprimes are without reversal shortcuts; desirable  outcome  is  failure!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -263,10 +263,15 @@ int main()
 		
 		//Loops: model modification, another pass of all 100 or 10,000 training items. Improved model is saved.
 		srand(time(0));
+		int model_iteration = 0;
+		long long loops = 0;
 		int best_misclassification = misclassification_counter;
 		int exhaustion_counter = 0;
 		for(; misclassification_counter > 0;)
-		{	//..........Randomly modifies a model neuron (WITH reversion if modification unhelpful;
+		{	loops++;
+			if(loops == 9223372036854775807) {loops = 0;}
+			
+			//..........Randomly modifies a model neuron (WITH reversion if modification unhelpful;
 			int random_layer  = (rand() %  4); random_layer++;
 			int random_neuron = (rand() % 18);
 			int random_output = (rand() %  2);
@@ -363,10 +368,20 @@ int main()
 				out_stream.close();
 				
 				//..........Prints model.
+				model_iteration++;
 				cout << "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-				system("date");
-				cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-				cout << "Updated model: ";
+				system("date > date.txt");
+				
+				in_stream.open("date.txt");
+				for(int a = 0; a < 27; a++) {in_stream.get(garbage_byte); cout << garbage_byte;}
+				in_stream.close();
+				remove("date.txt");
+				
+				cout << " (update " << model_iteration << ", " << "run " << loops << " since last)\n"
+				     << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+				     << "Updated model: ";
+				
+				loops = 0;
 				for(int a = 0; a < 18; a++) {cout << char(input_model   [a] + 32);}
 				for(int a = 0; a < 18; a++) {cout << char(hidden_1_model[a] + 32);}
 				for(int a = 0; a < 18; a++) {cout << char(hidden_2_model[a] + 32);}
