@@ -8,4 +8,4 @@ Train a model to recognize 18-digit primes, all models unique.
   <img src="https://github.com/compromise-evident/pqML/blob/main/Other/Terminal.png">
 </p>
 
-[Auditing in the browser?](https://coliru.stacked-crooked.com/a/910d13284b546e6e)
+[Auditing in the browser?](https://coliru.stacked-crooked.com/a/a9eb5f6503c239a8)
