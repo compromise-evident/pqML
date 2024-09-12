@@ -1,11 +1,6 @@
 Run it: ```apt install g++ geany libgmp-dev libdlib-dev```. Open the .cpp in Geany.<br>
 Append ```-lgmp -ldlib``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
-<br>
-<br>
-
-## !work-in-progress! (options 4 & 5 done, ezMNIST done)
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/pqML/main/Other/Terminal.png">
 </p>
