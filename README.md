@@ -1,5 +1,5 @@
-apt install libgmp-dev libdlib-dev<br>
-Append "-lgmp -ldlib" to Geany's compile & build commands. Or then compile: g++ /this.cpp -lgmp -ldlib
+```apt install libgmp-dev libdlib-dev```<br>
+Append ```-lgmp -ldlib``` to Geany's compile & build commands. Or then compile: ```g++ /this.cpp -lgmp -ldlib```
 
 <br>
 <br>
