@@ -1,6 +1,6 @@
-Requirement: GNU Multiple Precision Arithmetic Library, and dlib ML library.
-Just do ```apt install libgmp-dev libdlib-dev``` then append "-lgmp -ldlib" to both compile & build
-commands in Geany, or then compile using ```g++ /path_to_this.cpp -lgmp -ldlib```
+* ```apt install libgmp-dev libdlib-dev```
+* append "-lgmp -ldlib" to both compile & build commands in Geany.
+* Or then compile: ```g++ /path_to_this.cpp -lgmp -ldlib```
 
 <br>
 <br>
@@ -133,7 +133,7 @@ Go to wolframalpha.com and say
 <br>
 <br>
 
-# ezMNIST
+# ezMNIST included
 
 Extract the file;
 "train-ezMNIST.txt" contains 60,000 labeled images of handwritten digits
