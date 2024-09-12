@@ -1,5 +1,9 @@
 <p align="center"><sub>apt install libgmp-dev libdlib-dev, append "-lgmp -ldlib" to Geany's compile & build commands. Or then compile: g++ /this.cpp -lgmp -ldlib<sub/></p>
 
+apt install libgmp-dev libdlib-dev
+Append "-lgmp -ldlib" to Geany's compile & build commands.
+Or then compile: g++ /this.cpp -lgmp -ldlib
+
 <br>
 <br>
 
@@ -139,6 +143,9 @@ Extract the file;
 its 784 characters by rows of 28, as it is a 28x28 image.
 "test-ezMNIST.txt" contains 10,000 more such lines not found among the 60k.
 See "visual_for_you.txt" to get a good look at each image.
+
+<br>
+<br>
 
 # Make your own training-data
 
