@@ -155,7 +155,7 @@ and not just on something less intense like ezMNIST.
 If train.txt is missing, pqML will test then halt.
 And if test.txt is missing, pqML will train then halt, because
 
-* "test.txt" can contain data without labels; pqML then classifies each item and writes the results to file.
+* "test.txt" can contain just data without labels; pqML then classifies each item and writes the results to file.
 
 <br>
 <br>
