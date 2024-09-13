@@ -151,9 +151,10 @@ It lets you thoroughly verify that the model can generalize on your data
 and not just on something less intense like ezMNIST.
 If train.txt is missing, pqML will test then halt.
 And if test.txt is missing, pqML will train then halt.
-See, "test.txt" can contain data without labels;
-pqML then classifies each item and writes the results to file,
-rather than comparing it to labels.
+
+* "test.txt" can contain data without labels;
+  pqML then classifies each item and writes the results to file,
+  rather than comparing it to labels.
 
 <br>
 <br>
