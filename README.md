@@ -139,21 +139,23 @@ See "visual_for_you.txt" to get a good look at each image.
 <br>
 <br>
 
-# Make your own training-data
+# Make your own train.txt
 
 * Each line starts with one label digit.
 * Then the space character.
 * Then up to 98 characters (bytes 32-126.)
 * Then the Linux new line character (byte 10 or \n.)
 
-Testing-data is the same but with items not found in the training-data.
-It lets you thoroughly verify that the model can generalize on your data
+# Make your own test.txt
+
+Testing-data should be the same as training-data but of unique items.
+Testing-data lets you thoroughly and automatically verify that
+the model can generalize on your data
 and not just on something less intense like ezMNIST.
 If train.txt is missing, pqML will test then halt.
-And if test.txt is missing, pqML will train then halt.
+And if test.txt is missing, pqML will train then halt, because
 
-* "test.txt" can contain data without labels;
-  pqML then classifies each item and writes the results to file.
+* "test.txt" can contain data without labels; pqML then classifies each item and writes the results to file.
 
 <br>
 <br>
