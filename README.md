@@ -157,6 +157,18 @@ And if test.txt is missing, pqML will train then halt, because
 
 * "test.txt" can contain just data without labels; pqML then classifies each item and writes the results to file.
 
+# Don't worry about tokenization
+
+Your data must not exceed 98 characters.
+If any line has data shorter than 98 characters, pqML automatically
+provides padding for those lines, by prepending absolute zeros until
+that line is 98 characters long.
+Each absolute zero consists of "0,0,0,0,0,0,0,0".
+Your characters on the other hand, consist of their binary string, +128.
+See, 128 is added so that each character always begins with a "1" bit.
+Example: "a" = 01100001 = 97. Now do 01100001 + 10000000 = 11100001.
+That's 97 + 128 = 225.
+
 <br>
 <br>
 
