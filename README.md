@@ -8,7 +8,7 @@ Append ```-lgmp -ldlib``` to Geany's compile & build commands. Hit F9 once. F5 t
 <br>
 <br>
 
-## Training-data & testing-data are the same but of unique items
+## train.txt & test.txt are the same but of unique items
 
 See that first semiprime of 40 digits? It must be classified under the label "2"
 because "2" is the first digit of that semiprime's smaller factor.
