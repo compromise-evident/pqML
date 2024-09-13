@@ -146,6 +146,9 @@ See "visual_for_you.txt" to get a good look at each image.
 * Then up to 98 characters (bytes 32-126.)
 * Then the Linux new line character (byte 10 or \n.)
 
+<br>
+<br>
+
 # Make your own test.txt
 
 Testing-data should be the same as training-data but of unique items.
@@ -156,6 +159,9 @@ If train.txt is missing, pqML will test then halt.
 And if test.txt is missing, pqML will train then halt, because
 
 * "test.txt" can contain just data without labels; pqML then classifies each item and writes the results to file.
+
+<br>
+<br>
 
 # Don't worry about tokenization
 
@@ -171,6 +177,7 @@ That's 97 + 128 = 225. So an "a" in your data triggers "1,1,1,0,0,0,0,1"
 on the model's input layer of 784 width--corresponding
 to where that "a" sits in your data.
 Note, 98 characters * 8 bits = 784 model width.
+ezMNIST data is not really tokenized because it already consists of 784 "black & white" characters, per line.
 
 <br>
 <br>
