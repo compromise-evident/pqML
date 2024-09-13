@@ -23,16 +23,16 @@ int main()
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
 	//                               Semiprimes+factors
-	int                           p_length =    33; //33 max
-	int                           q_length =    33; //33 max
-	int                          pq_length =    66; //66 max
-	int             semiprimes_for_testing =  1000; //2B max
-	int            semiprimes_for_training = 50000; //2B max
+	int                           p_length =    33; //max: 33 for pqML, 50k  actual
+	int                           q_length =    33; //max: 33 for pqML, 50k  actual
+	int                          pq_length =    66; //max: 66 for pqML, 100k actual
+	int             semiprimes_for_testing =  1000; //max: 2B
+	int            semiprimes_for_training = 50000; //max: 2B
 	
 	//                               Primes+composites
-	int         prime_and_composite_length =    98; //98 max
-	int  primes_and_composites_for_testing = 10000; //2B max
-	int primes_and_composites_for_training = 90000; //2B max
+	int         prime_and_composite_length =    98; //max: 98 for pqML, 50k  actual
+	int  primes_and_composites_for_testing = 10000; //max: 2B
+	int primes_and_composites_for_training = 90000; //max: 2B
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
