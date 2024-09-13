@@ -167,7 +167,10 @@ Each absolute zero consists of "0,0,0,0,0,0,0,0".
 Your characters on the other hand, consist of their binary string, +128.
 See, 128 is added so that each character always begins with a "1" bit.
 Example: "a" = 01100001 = 97. Now do 01100001 + 10000000 = 11100001.
-That's 97 + 128 = 225.
+That's 97 + 128 = 225. So an "a" in your data triggers "1,1,1,0,0,0,0,1"
+on the model's input layer of 784 width--corresponding
+to where that "a" sits in your data.
+Note, 98 characters * 8 bits = 784 model width.
 
 <br>
 <br>
