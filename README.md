@@ -139,8 +139,7 @@ its 784 characters by rows of 28, as it is a 28x28 image.
 See "visual_for_you.txt" to get a good look at each image.
 
 * I created ezMNIST from MNIST, which is the standard for testing model generalization.
-* ezMNIST is MNIST but better; it's all text, highly compressible, and puts labels & data together.
-* See also my imgMNIST at github.com/compromise-evident/WhatNot/blob/main/MNIST_actual_images_textual_labels.tar.bz2
+* ezMNIST is MNIST but better; it's all text, highly compressible, and puts labels & data together!
 
 <br>
 <br>
