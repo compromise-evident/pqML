@@ -1,3 +1,5 @@
+Done so far: all generators, ezMNIST
+
 Run it: ```apt install g++ geany libgmp-dev libdlib-dev```. Open the .cpp in Geany.<br>
 Append ```-lgmp -ldlib``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 

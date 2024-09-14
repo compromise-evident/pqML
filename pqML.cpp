@@ -1,6 +1,7 @@
 /// pqML - let AI factor semiprimes of up to 66 digits, and                     Run it: "apt install g++ geany libgmp-dev libdlib-dev". Open the .cpp in Geany.
-///        recognize primes of up to 98 digits. Includes ezMNIST                Append "-lgmp -ldlib" to Geany's compile & build commands. Hit F9 once. F5 to run.
-///        and an ezMNIST-style generator for all those numbers.
+///        recognize primes & composites of up to 98 digits.                    Append "-lgmp -ldlib" to Geany's compile & build commands. Hit F9 once. F5 to run.
+///        Includes ezMNIST & ezMNIST-style generators. Or
+///        put any characters in train.txt & test.txt.
 
 
 // Version 3.0.0
