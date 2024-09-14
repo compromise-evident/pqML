@@ -131,11 +131,11 @@ Go to wolframalpha.com and say
 
 # ezMNIST
 
-Extract the file;
-**"train-ezMNIST.txt"** contains 60,000 labeled images of handwritten digits
+Extract the file.
+**train-ezMNIST.txt** contains 60,000 labeled images of handwritten digits
 (one label & image per line of text.) An image becomes legible if you arrange
 its 784 characters by rows of 28, as it is a 28x28 image.
-**"test-ezMNIST.txt"** contains 10,000 more such lines not found among the 60k.
+**test-ezMNIST.txt** contains 10,000 more such lines not found among the 60k.
 See "visual_for_you.txt" to get a good look at each image.
 
 * I created ezMNIST from MNIST, which is the standard for testing model generalization.
