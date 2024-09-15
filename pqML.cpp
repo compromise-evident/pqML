@@ -50,23 +50,24 @@ int main()
 	ifstream in_stream;
 	ofstream out_stream;
 	
-	cout << "\n(1) Create a new random model and save it in one folder."
-	     << "\n(2) Train & test model for generalization using ezMNIST."
-	     << "\n(3) Train & test model on your data, prime or semiprime;"
+	cout << "\n(1) Create a new model and save it in one folder."
+	     << "\n(2) Generate new semiprimes+factors, ezMNIST style."
+	     << "\n(3) Generate new primes+composites, ezMNIST style."
 	     << "\n"
-	     << "\n(4) Generate new semiprimes+factors, ezMNIST style."
-	     << "\n(5) Generate new primes+composites, ezMNIST style."
+	     << "\n(4) Train & test model for generalization using ezMNIST."
+	     << "\n(5) Train & test model on generated train.txt and test.txt."
+	     << "\n(6) Test model on test.txt. No labels? Results saved to file!"
 	
 	     << "\n\nOption: ";
 	
 	int user_option; cin >> user_option;
-	if((user_option != 1) && (user_option != 2) && (user_option != 3) && (user_option != 4) && (user_option != 5)) {cout << "\nInvalid.\n"; return 0;}
+	if((user_option != 1) && (user_option != 2) && (user_option != 3) && (user_option != 4) && (user_option != 5) && (user_option != 6)) {cout << "\nInvalid.\n"; return 0;}
 	
 	
 	
 	
 	
-	//_______________________________________________________Create___________________________________________________//
+	//__________________________________________________Create_model__________________________________________________//
 	if(user_option == 1)
 	{	
 	}
@@ -75,17 +76,8 @@ int main()
 	
 	
 	
-	//_________________________________________________________Run____________________________________________________//
-	if((user_option == 2) || (user_option == 3))
-	{	
-	}
-	
-	
-	
-	
-	
-	//_____________________________________________________Semiprimes_________________________________________________//
-	if(user_option == 4)
+	//_______________________________________________Semiprimes+factors_______________________________________________//
+	if(user_option == 2)
 	{	//Verbatim from semiprime-training-data.cpp except for no padded, no ios::app for file output.
 		srand(time(0));
 		char  p[ 50001] = {'\0'};
@@ -157,8 +149,8 @@ int main()
 	
 	
 	
-	//_______________________________________________________Primes___________________________________________________//
-	if(user_option == 5)
+	//________________________________________________Primes+composites_______________________________________________//
+	if(user_option == 3)
 	{	//Verbatim from semiprime-training-data.cpp.
 		srand(time(0));
 		char p[50001] = {'\0'};
@@ -211,5 +203,16 @@ int main()
 			loops++; cout << loops << " of " << primes_and_composites_for_training << "\n";
 		}
 		out_stream.close();
+	}
+	
+	
+	
+	
+	
+	//____________________________________________________Use_model___________________________________________________//
+	if((user_option == 4)
+	|| (user_option == 5)
+	|| (user_option == 6))
+	{	
 	}
 }
