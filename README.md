@@ -147,10 +147,9 @@ See "visual_for_you.txt" to get a good look at each image.
 
 # Make your own train.txt
 
-* Each line starts with one label digit.
-* Then the space character.
-* Then up to 98 characters (bytes 32-126.)
-* Then the Linux new line character (byte 10 or \n.)
+* Each line starts with a label digit then space.
+* Then up to 98 characters (bytes 32-126; space to tilde.)
+* Then a new line as seen in Linux text files (byte 10 or \n.)
 * test.txt is the same but with items not found in train.txt.
 
 <br>
