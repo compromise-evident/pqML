@@ -4,7 +4,7 @@ Run it: ```apt install g++ geany libgmp-dev libdlib-dev```. Open the .cpp in Gea
 Append ```-lgmp -ldlib``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/main/Other/Terminal.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/main/Other/Terminal_c371a3edadf797f86b684034adf866bf.png">
 </p>
 
 <br>
