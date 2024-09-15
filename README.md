@@ -140,7 +140,7 @@ See visual_for_you.txt to get a good look at each image.
 
 * I created ezMNIST from MNIST, which is the standard for testing model generalization.
 * ezMNIST is MNIST but better; it's all text, highly compressible, and puts labels & data together!
-* ML which handles MNIST, will binarize ezMNIST image data to the same significance and quality.
+* ML which handles MNIST, will binarize ezMNIST image data to the same quality and consequence.
 
 <br>
 <br>
