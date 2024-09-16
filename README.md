@@ -1,7 +1,9 @@
-### Done so far: all generators, ezMNIST
+Done so far: all generators, ezMNIST, ML PoC. Working on: automating the ML.
 
-Run it: ```apt install g++ geany libgmp-dev libdlib-dev```. Open the .cpp in Geany.<br>
-Append ```-lgmp -ldlib``` to Geany's compile & build commands. Hit F9 once. F5 to run.
+<br>
+
+Run it: ```apt install g++ geany libgmp-dev python3-torch```. Open the .cpp in Geany.<br>
+Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/pqML/main/Other/Terminal_c371a3edadf797f86b684034adf866bf.png">

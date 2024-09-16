@@ -1,11 +1,10 @@
-/// pqML - let AI factor up to 66-digit semiprimes, and                         Run it: "apt install g++ geany libgmp-dev libdlib-dev". Open the .cpp in Geany.
-///        recognize up to 98-digit primes & composites.                        Append "-lgmp -ldlib" to Geany's compile & build commands. Hit F9 once. F5 to run.
+/// pqML - let AI factor up to 66-digit semiprimes, and                         Run it: "apt install g++ geany libgmp-dev python3-torch". Open the .cpp in Geany.
+///        recognize up to 98-digit primes & composites.                        Append "-lgmp" to Geany's compile & build commands. Hit F9 once. F5 to run.
 ///        All generated in the style of ezMNIST, which
 ///        is included to test model for generalization.
 
 
-// Version 3.0.0
-//#include <dlib/dnn.h>   //temporarily disabled for faster compile time.
+// Version 4.0.0
 #include <fstream>
 #include <gmp.h>
 #include <iostream>
@@ -23,17 +22,20 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
+	//                                   Model depth
+	int                      hidden_layers =    20; //2B max
+	
 	//                               Semiprimes+factors
-	int                           p_length =    33; //max: 33 for pqML, 50k  actual
-	int                           q_length =    33; //max: 33 for pqML, 50k  actual
-	int                          pq_length =    66; //max: 66 for pqML, 100k actual
-	int             semiprimes_for_testing =  1000; //max: 2B
-	int            semiprimes_for_training = 50000; //max: 2B
+	int                           p_length =    33; //33 max
+	int                           q_length =    33; //33 max
+	int                          pq_length =    66; //66 max
+	int             semiprimes_for_testing =  1000; //2B max
+	int            semiprimes_for_training = 50000; //2B max
 	
 	//                               Primes+composites
-	int         prime_and_composite_length =    98; //max: 98 for pqML, 50k  actual
-	int  primes_and_composites_for_testing = 10000; //max: 2B
-	int primes_and_composites_for_training = 90000; //max: 2B
+	int         prime_and_composite_length =    98; //98 max
+	int  primes_and_composites_for_testing = 10000; //2B max
+	int primes_and_composites_for_training = 90000; //2B max
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
@@ -69,7 +71,23 @@ int main()
 	
 	//__________________________________________________Create_model__________________________________________________//
 	if(user_option == 1)
-	{	
+	{	system("mkdir Model -p");
+		//Input   layer: 784 neurons.
+		//Hidden layers: quantity set by hidden_layers.
+		//Hidden layers: 784 neurons each.
+		//Output  layer: 10 neurons.
+		
+		//Creates 4 .py files which use PyTorch, saves them to folder Model.
+		
+		
+		
+		
+		//-------------------------------------------------temp use:
+		//system("python3 ./Model/create_model.py");
+		//cout << "\nModel saved to file.\n";
+		
+		//system("python3 ./Model/train_model.py");
+		//system("python3 ./Model/test_model.py");
 	}
 	
 	
