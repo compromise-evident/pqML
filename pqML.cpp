@@ -1,5 +1,5 @@
-/// pqML - let AI factor up to 66-digit semiprimes, and                         Run it: "apt install g++ geany libgmp-dev python3-torch". Open the .cpp in Geany.
-///        recognize up to 98-digit primes & composites.                        Append "-lgmp" to Geany's compile & build commands. Hit F9 once. F5 to run.
+/// pqML - let AI factor up to 100-digit semiprimes, and                        Run it: "apt install g++ geany libgmp-dev python3-torch". Open the .cpp in Geany.
+///        recognize up to 150-digit primes & composites.                       Append "-lgmp" to Geany's compile & build commands. Hit F9 once. F5 to run.
 ///        All generated in the style of ezMNIST, which
 ///        is included to test model for generalization.
 
@@ -83,8 +83,8 @@ int main()
 		
 		
 		//-------------------------------------------------temp use:
-		//system("python3 ./Model/create_model.py");
-		//cout << "\nModel saved to file.\n";
+		system("python3 ./Model/Python_creates_and_uses_model/create_model.py");
+		cout << "\nModel saved to folder.\n";
 		
 		//system("python3 ./Model/train_model.py");
 		//system("python3 ./Model/test_model.py");
@@ -96,7 +96,7 @@ int main()
 	
 	//_______________________________________________Semiprimes+factors_______________________________________________//
 	if(user_option == 2)
-	{	//Verbatim from semiprime-training-data.cpp except for no padded, no ios::app for file output.
+	{	//Verbatim from semiprime-training-data.cpp.
 		srand(time(0));
 		char  p[ 50001] = {'\0'};
 		char  q[ 50001] = {'\0'};

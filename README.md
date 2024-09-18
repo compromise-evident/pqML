@@ -150,31 +150,34 @@ See visual_for_you.txt to get a good look at each image.
 
 ## Make your own train.txt
 
-* Each line starts with a label digit then space.
-* Then up to 98 characters, no spaces (bytes 33-126 or ! to ~.)
-* Then a new line as seen in Linux text files (byte 10 or \n.)<br><br>
+* Each line: ```label digit```, ```space```, ```up to 150 digits/dashes```, ```new line``` (\n.)<br><br>
 * test.txt is the same but with items not found in train.txt.
 * test.txt without labels means no space before the data.
 
 <br>
 <br>
 
-## Don't worry about padding, tokenization, & normalization
+## Don't worry about tokenization, normalization, masking, & padding
 
-Your data must not exceed 98 characters.
-If any line has data shorter than 98 characters, pqML automatically
-provides padding for those lines, by prepending absolute zeros until
-that line is 98 characters long.
-Each absolute zero consists of "0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0".
-Your characters on the other hand, consist of their binary string, +128.
-See, 128 is added so that each character always begins with a "1" bit, even if it's the number zero.
-Example: "a" = 01100001 = 97. Now do 01100001 + 10000000 = 11100001.
-That's 97 + 128 = 225. So an "a" in your data triggers "1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0"
-on the model's input layer of 784 width--corresponding
-to where that "a" sits in your data.
-Note, 98 characters * 8 bits = 784 model width.
-ezMNIST data is not padded or tokenized, but normalized because it already consists of 784 "black & white" characters, per line.
-"-" becomes 0.0 while "ÿ" becomes 1.0 on the input layer.
+```text
+
+0 tokenized to 10000    then normalized to 1.0, 0.0, 0.0, 0.0, 0.0
+1 tokenized to 10001    then normalized to 1.0, 0.0, 0.0, 0.0, 1.0
+2 tokenized to 10010    then normalized to 1.0, 0.0, 0.0, 1.0, 0.0
+3 tokenized to 10011    then normalized to 1.0, 0.0, 0.0, 1.0, 1.0
+4 tokenized to 10100    then normalized to 1.0, 0.0, 1.0, 0.0, 0.0
+5 tokenized to 10101    then normalized to 1.0, 0.0, 1.0, 0.0, 1.0
+6 tokenized to 10110    then normalized to 1.0, 0.0, 1.0, 1.0, 0.0
+7 tokenized to 10111    then normalized to 1.0, 0.0, 1.0, 1.0, 1.0
+8 tokenized to 11000    then normalized to 1.0, 1.0, 0.0, 0.0, 0.0
+9 tokenized to 11001    then normalized to 1.0, 1.0, 0.0, 0.0, 1.0
+- tokenized to 11111    then normalized to 1.0, 1.0, 1.0, 1.0, 1.0
+
+Five zeros tokenized: 1000010000100001000010000100000000000000....
+                                               ^          ^
+                                             mask      padding
+
+```
 
 <br>
 <br>
