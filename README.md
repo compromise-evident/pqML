@@ -150,9 +150,8 @@ See visual_for_you.txt to get a good look at each image.
 
 ## Make your own train.txt
 
-* Each line: ```label digit```, ```space```, ```up to 150 digits/dashes```, ```new line``` (\n.)<br><br>
-* test.txt is the same but with items not found in train.txt.
-* test.txt without labels means no space before the data.
+* Each line: ```label digit```, ```space```, ```up to 150 digits/dashes```, ```new line``` (\n.)
+* test.txt is the same but with items not found in train.txt. No labels? No spaces!
 
 <br>
 <br>
