@@ -173,7 +173,7 @@ See visual_for_you.txt to get a good look at each image.
 - tokenized to 11111    then normalized to 1.0, 1.0, 1.0, 1.0, 1.0
 
 Five zeros tokenized: 1000010000100001000010000100000000000000....
-                                               ^          ^
+                                               ^         \/
                                              mask      padding
 
 ```
