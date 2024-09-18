@@ -131,7 +131,7 @@ Go to wolframalpha.com and say
 <br>
 <br>
 
-# ezMNIST
+## ezMNIST
 
 Extract the file.
 **train-ezMNIST.txt** contains 60,000 labeled images of handwritten digits
@@ -148,7 +148,7 @@ See visual_for_you.txt to get a good look at each image.
 <br>
 <br>
 
-# Make your own train.txt
+## Make your own train.txt
 
 * Each line starts with a label digit then space.
 * Then up to 98 characters, no spaces (bytes 33-126 or ! to ~.)
@@ -159,7 +159,7 @@ See visual_for_you.txt to get a good look at each image.
 <br>
 <br>
 
-# Don't worry about padding & tokenization
+## Don't worry about padding, tokenization, & normalization
 
 Your data must not exceed 98 characters.
 If any line has data shorter than 98 characters, pqML automatically
