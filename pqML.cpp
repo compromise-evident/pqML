@@ -23,19 +23,19 @@ int main()
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
 	//                                   Model depth
-	int                      hidden_layers =    20; //2B max
+	int                      hidden_layers =    20; //2B  max
 	
 	//                               Semiprimes+factors
-	int                           p_length =    33; //33 max
-	int                           q_length =    33; //33 max
-	int                          pq_length =    66; //66 max
-	int             semiprimes_for_testing =  1000; //2B max
-	int            semiprimes_for_training = 50000; //2B max
+	int                           p_length =    50; //50  max
+	int                           q_length =    50; //50  max
+	int                          pq_length =   100; //100 max
+	int             semiprimes_for_testing =  1000; //2B  max
+	int            semiprimes_for_training = 50000; //2B  max
 	
 	//                               Primes+composites
-	int         prime_and_composite_length =    98; //98 max
-	int  primes_and_composites_for_testing = 10000; //2B max
-	int primes_and_composites_for_training = 90000; //2B max
+	int         prime_and_composite_length =   150; //150 max
+	int  primes_and_composites_for_testing = 10000; //2B  max
+	int primes_and_composites_for_training = 90000; //2B  max
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
