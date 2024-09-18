@@ -173,7 +173,7 @@ That's 97 + 128 = 225. So an "a" in your data triggers "1.0, 1.0, 1.0, 0.0, 0.0,
 on the model's input layer of 784 width--corresponding
 to where that "a" sits in your data.
 Note, 98 characters * 8 bits = 784 model width.
-ezMNIST data is not tokenized but normalized because it already consists of 784 "black & white" characters, per line.
+ezMNIST data is not padded or tokenized, but normalized because it already consists of 784 "black & white" characters, per line.
 "-" becomes 0.0 while "ÿ" becomes 1.0 on the input layer.
 
 <br>
