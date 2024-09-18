@@ -151,7 +151,7 @@ See visual_for_you.txt to get a good look at each image.
 # Make your own train.txt
 
 * Each line starts with a label digit then space.
-* Then up to 98 characters (no space, bytes 33-126 or ! to ~.)
+* Then up to 98 characters, no space (bytes 33-126 or ! to ~.)
 * Then a new line as seen in Linux text files (byte 10 or \n.)<br><br>
 * test.txt is the same but with items not found in train.txt.
 * test.txt without labels means no space before the data.
