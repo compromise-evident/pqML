@@ -22,8 +22,9 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
-	//                                   Model depth
-	int                      hidden_layers =    20; //2B  max
+	//                                  Hidden layers
+	int                              width =  1000; //2B  max
+	int                              depth =    20; //2B  max
 	
 	//                               Semiprimes+factors
 	int                           p_length =    50; //50  max
@@ -72,10 +73,8 @@ int main()
 	//__________________________________________________Create_model__________________________________________________//
 	if(user_option == 1)
 	{	system("mkdir Model -p");
-		//Input   layer: 784 neurons.
-		//Hidden layers: quantity set by hidden_layers.
-		//Hidden layers: 784 neurons each.
-		//Output  layer: 10 neurons.
+		//Input  layer always eats 784.
+		//Output layer always gives 10.
 		
 		//Creates 4 .py files which use PyTorch, saves them to folder Model.
 		
