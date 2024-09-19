@@ -150,7 +150,7 @@ See visual_for_you.txt to get a good look at each image.
 
 ## Make your own train.txt
 
-* Each line: ```label digit```, ```space```, ```up to 150 digits/dashes```, ```new line``` (\n.)
+* Each line: ```label digit```, ```space```, ```up to 150 digits/underscores```, ```new line``` (\n.)
 * test.txt is the same but with items not found in train.txt. No labels? No spaces!
 
 <br>
@@ -170,7 +170,7 @@ See visual_for_you.txt to get a good look at each image.
 7 tokenized to 10111    then normalized to 1.0, 0.0, 1.0, 1.0, 1.0
 8 tokenized to 11000    then normalized to 1.0, 1.0, 0.0, 0.0, 0.0
 9 tokenized to 11001    then normalized to 1.0, 1.0, 0.0, 0.0, 1.0
-- tokenized to 11111    then normalized to 1.0, 1.0, 1.0, 1.0, 1.0
+_ tokenized to 11111    then normalized to 1.0, 1.0, 1.0, 1.0, 1.0
 
 Five zeros tokenized: 1000010000100001000010000100000000000000....
                                                ^         \/
