@@ -1,4 +1,4 @@
-Done so far: all generators, ezMNIST, ezMNIST generalization. Working on: finishing up.
+Done so far: options 1-5
 
 <br>
 
@@ -150,7 +150,6 @@ See **visual_for_you.txt** to get a good look at each image.
 
 * Each line: ```label digit```, ```space```, ```up to 150 digits/underscores```, ```new line``` (\n.)
 * test.txt is the same but with items not found in train.txt.
-* If test.txt has no labels, use option 8 to classify its items.
 
 <br>
 <br>
