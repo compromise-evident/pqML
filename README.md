@@ -6,7 +6,7 @@ Run it: ```apt install g++ geany libgmp-dev python3-torch```. Open the .cpp in G
 Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/main/Other/Terminal_c371a3edadf797f86b684034adf866bf.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Terminal_360ada2da39672b0bf5e1f345ef32a1e.png">
 </p>
 
 <br>
