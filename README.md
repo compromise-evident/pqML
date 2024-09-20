@@ -1,4 +1,4 @@
-Done so far: all generators, ezMNIST, ML PoC. Working on: automating the ML.
+Done so far: all generators, ezMNIST, ezMNIST generalization. Working on: finishing up.
 
 <br>
 
@@ -131,27 +131,26 @@ Go to wolframalpha.com and say
 <br>
 <br>
 
-## ezMNIST
+## ezMNIST is human-readable MNIST, with data & labels combined
 
 Extract the file.
 **train-ezMNIST.txt** contains 60,000 labeled images of handwritten digits
 (one label & image per line of text.) An image becomes legible if you arrange
 its 784 characters by rows of 28, as it is a 28x28 image.
 **test-ezMNIST.txt** contains 10,000 more such lines not found among the 60k.
-See visual_for_you.txt to get a good look at each image.
+See **visual_for_you.txt** to get a good look at each image.
 
 * I created ezMNIST from MNIST, which is the standard for testing model generalization.
-* ezMNIST is MNIST but better; it's all text, highly compressible, and puts labels & data together!
-* ML which handles MNIST, will binarize ezMNIST image data to the same quality and consequence.
-* Do not copy+paste ezMNIST data; each "ÿ" will paste as 2 unwanted bytes. Use C++ to copy it.
+* Don't copy+paste the "ÿ" in ezMNIST. It'll paste as 2 unwanted bytes. Use C++ to copy.
 
 <br>
 <br>
 
-## Make your own train.txt
+## Make your own training-data
 
 * Each line: ```label digit```, ```space```, ```up to 150 digits/underscores```, ```new line``` (\n.)
-* test.txt is the same but with items not found in train.txt. No labels? No spaces!
+* test.txt is the same but with items not found in train.txt.
+* If test.txt has no labels, use option 8 to classify its items.
 
 <br>
 <br>
