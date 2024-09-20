@@ -23,8 +23,8 @@ int main()
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
 	//                  Hidden layers (get new model per change)
-	int                   number_of_layers =  2000; //2B  max
-	int                  neurons_per_layer =    10; //2B  max
+	int                   number_of_layers =     4; //2B  max
+	int                  neurons_per_layer =  2000; //2B  max
 	
 	//                               Semiprimes+factors
 	int                           p_length =    50; //50  max
@@ -71,9 +71,9 @@ int main()
 	
 	
 	
-	//Input  layer always eats 784. Output layer always gives 10.
+	//Input layer always eats 784. Output layer always gives 10.
 	//Writes hidden layer values to a file, for 6 .py files to use. All .py files import only PyTorch.
-	system("mkdir Model -p"); out_stream.open("Model/Python/depth_width"); out_stream << number_of_layers << "\n" << neurons_per_layer; out_stream.close();
+	out_stream.open("Model/Python/depth_width.txt"); out_stream << number_of_layers << "\n" << neurons_per_layer << "\n"; out_stream.close();
 	
 	if     (user_option == 1) {system("python3 ./Model/Python/model.py"   );} //   Model
 	else if(user_option == 2) {system("python3 ./Model/Python/ezMNIST.py" );} //   ezMNIST
