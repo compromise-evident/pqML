@@ -22,9 +22,9 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
-	//                                  Hidden layers
-	int                              width =  1000; //2B  max
-	int                              depth =    20; //2B  max
+	//                  Hidden layers (get new model per change)
+	int                   number_of_layers =  2000; //2B  max
+	int                  neurons_per_layer =    10; //2B  max
 	
 	//                               Semiprimes+factors
 	int                           p_length =    50; //50  max
@@ -53,48 +53,42 @@ int main()
 	ifstream in_stream;
 	ofstream out_stream;
 	
-	cout << "\n(1) Create a new model and save it in one folder."
-	     << "\n(2) Generate new semiprimes+factors, ezMNIST style."
-	     << "\n(3) Generate new primes+composites, ezMNIST style."
-	     << "\n"
-	     << "\n(4) Train & test model for generalization using ezMNIST."
-	     << "\n(5) Train & test model on generated train.txt and test.txt."
-	     << "\n(6) Test model on test.txt. No labels? Results saved to file!"
+	cout << "\n(1) Model    (Create a new model and save it in one folder.)"
+	     << "\n(2) ezMNIST  (Train & test model for generalization using ezMNIST.)"
+	     << "\n(3) Evidence (See again the testing on ezMNIST, without training.)"
+	     << "\n÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷×÷"
+	     << "\n(4) factors  (Generate new semiprimes+factors, ezMNIST style.)"
+	     << "\n(5) primes   (Generate new primes+composites, ezMNIST style.)"
+	     << "\n(6) Train    (Train & test model on generated train.txt & test.txt.)"
+	     << "\n(7) Test     (See again the testing on test.txt, without training.)"
+	     << "\n(8) Use      (Classify unlabeled version of test.txt with no spaces.)"
 	
 	     << "\n\nOption: ";
 	
 	int user_option; cin >> user_option;
-	if((user_option != 1) && (user_option != 2) && (user_option != 3) && (user_option != 4) && (user_option != 5) && (user_option != 6)) {cout << "\nInvalid.\n"; return 0;}
 	
 	
 	
 	
 	
-	//__________________________________________________Create_model__________________________________________________//
-	if(user_option == 1)
-	{	system("mkdir Model -p");
-		//Input  layer always eats 784.
-		//Output layer always gives 10.
-		
-		//Creates 4 .py files which use PyTorch, saves them to folder Model.
-		
-		
-		
-		
-		//-------------------------------------------------temp use:
-		system("python3 ./Model/Python_creates_and_uses_model/create_model.py");
-		cout << "\nModel saved to folder.\n";
-		
-		//system("python3 ./Model/train_model.py");
-		//system("python3 ./Model/test_model.py");
-	}
+	//Input  layer always eats 784. Output layer always gives 10.
+	//Writes hidden layer values to a file, for 6 .py files to use. All .py files import only PyTorch.
+	system("mkdir Model -p"); out_stream.open("Model/Python/depth_width"); out_stream << number_of_layers << "\n" << neurons_per_layer; out_stream.close();
+	
+	if     (user_option == 1) {system("python3 ./Model/Python/model.py"   );} //   Model
+	else if(user_option == 2) {system("python3 ./Model/Python/ezMNIST.py" );} //   ezMNIST
+	else if(user_option == 3) {system("python3 ./Model/Python/evidence.py");} //   Evidence
+	
+	else if(user_option == 6) {system("python3 ./Model/Python/train.py"   );} //   Train
+	else if(user_option == 7) {system("python3 ./Model/Python/test.py"    );} //   Test
+	else if(user_option == 8) {system("python3 ./Model/Python/use.py"     );} //   Use
 	
 	
 	
 	
 	
 	//_______________________________________________Semiprimes+factors_______________________________________________//
-	if(user_option == 2)
+	else if(user_option == 4)
 	{	//Verbatim from semiprime-training-data.cpp.
 		srand(time(0));
 		char  p[ 50001] = {'\0'};
@@ -167,7 +161,7 @@ int main()
 	
 	
 	//________________________________________________Primes+composites_______________________________________________//
-	if(user_option == 3)
+	else if(user_option == 5)
 	{	//Verbatim from semiprime-training-data.cpp.
 		srand(time(0));
 		char p[50001] = {'\0'};
@@ -222,14 +216,5 @@ int main()
 		out_stream.close();
 	}
 	
-	
-	
-	
-	
-	//____________________________________________________Use_model___________________________________________________//
-	if((user_option == 4)
-	|| (user_option == 5)
-	|| (user_option == 6))
-	{	
-	}
+	else {cout << "\nInvalid.\n"; return 0;}
 }
