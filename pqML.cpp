@@ -23,8 +23,8 @@ int main()
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
 	//                  Hidden layers (get new model per change)
-	int                   number_of_layers =     4; //2B  max
-	int                  neurons_per_layer =  2000; //2B  max
+	int                   number_of_layers =     5; //2B  max
+	int                  neurons_per_layer =  5000; //2B  max
 	
 	//                               Semiprimes+factors
 	int                           p_length =    50; //50  max
