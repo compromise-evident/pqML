@@ -1,4 +1,4 @@
-## Play with ezMNIST! (options 1-5 done)
+(remaining to do: option 8)
 
 <br>
 
