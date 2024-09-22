@@ -1,5 +1,5 @@
-# Run it: "apt install geany python3-torch". Open the .py in Geany.
-# Replace "python" with "python3" in Geany's execute command. F5 to run.
+# See again the testing on ezMNIST, without training.                           Run it: "apt install geany python3-torch". Open the .py in Geany.
+#                                                                               Replace "python" with "python3" in Geany's execute command. F5 to run.
 
 import torch
 import torch.nn as nn

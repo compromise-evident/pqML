@@ -1,5 +1,5 @@
-# Run it: "apt install geany python3-torch". Open the .py in Geany.
-# Replace "python" with "python3" in Geany's execute command. F5 to run.
+# Create a new model and save it in one folder.                                 Run it: "apt install geany python3-torch". Open the .py in Geany.
+#                                                                               Replace "python" with "python3" in Geany's execute command. F5 to run.
 
 import torch
 import torch.nn as nn
