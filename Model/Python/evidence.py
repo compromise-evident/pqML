@@ -54,4 +54,6 @@ for a in range(total_testing_data_items):
 	if classification != expected_classification: misclassified += 1
 in_stream.close()
 
-print("\nMisclassifies", misclassified, "out of", total_testing_data_items, "(see results.txt)")
+print("\nMisclassifies", misclassified, "out of", total_testing_data_items, "(see results.txt)\n")
+percent_correct = format((((total_testing_data_items - misclassified) / total_testing_data_items) * 100), ".15f")
+print(percent_correct, end='% correct.')
