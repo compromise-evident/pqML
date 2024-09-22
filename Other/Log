@@ -1,0 +1,9 @@
+pqML
+
+
+
+Version 4.0.0   Using PyTorch. In very early versions, I used  C++  to build out
+                a tiny NN from nothing but low-level math improvisation. And its
+                training was random adjustments made after  all TD passed,  then
+                adjustments reverted if number of misclassified went up.
+                Sep 22 2024
