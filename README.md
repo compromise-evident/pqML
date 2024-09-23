@@ -15,7 +15,7 @@ Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 </p>
 
 That's right, a 5-deep 5,000-wide HL architecture gets 96% correct on test-ezMNIST.txt.
-You'll need that for the monster numbers. A depth-to-width of 1:1k seems to work best.
+And you'll need a big model for the monster numbers. A depth-to-width of 1:1k seems to work best.
 
 <br>
 <br>
