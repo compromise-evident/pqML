@@ -72,9 +72,10 @@ int main()
 	
 	
 	//Input layer always eats 784. Output layer always gives 10.
-	//Writes hidden layer values to a file, for 6 .py files to use. All .py files import only PyTorch.
+	//Writes hidden layer architecture values to a file, to be used by the following 6 .py files.
 	out_stream.open("Model/Python/depth_width.txt"); out_stream << number_of_layers << "\n" << neurons_per_layer << "\n"; out_stream.close();
 	
+	//Runs 1 .py file based on user option.
 	if     (user_option == 1) {system("python3 ./Model/Python/model.py"   );} //   Model
 	else if(user_option == 2) {system("python3 ./Model/Python/ezMNIST.py" );} //   ezMNIST
 	else if(user_option == 3) {system("python3 ./Model/Python/evidence.py");} //   Evidence
