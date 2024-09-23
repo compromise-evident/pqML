@@ -14,6 +14,9 @@ Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
   <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Configurable_ce528890a1569e7815d1a803dec993d1.png">
 </p>
 
+That's right, a 5-deep 5000-wide HL architecture gets 96% correct on test-ezMNIST.txt.
+You'll need that for the monster numbers. A depth-to-width of 1:1k seems to work best.
+
 <br>
 <br>
 
