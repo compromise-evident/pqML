@@ -35,7 +35,7 @@ for a in range(total_testing_data_items):
 	normalized = [0.0] * 784; normalized_write_bookmark = 0;
 	file_byte = in_stream.read(1); file_byte = in_stream.read(1); integer = file_byte[0];
 	while integer != 10:
-		if integer == 255: normalized[normalized_write_bookmark] = 1.0
+		if integer == 64: normalized[normalized_write_bookmark] = 1.0
 		normalized_write_bookmark += 1;
 		file_byte = in_stream.read(1);
 		integer = file_byte[0]
