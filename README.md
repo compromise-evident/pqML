@@ -147,9 +147,7 @@ Extract the file.
 its 784 characters by rows of 28, as it is a 28x28 image.
 **test-ezMNIST.txt** contains 10,000 more such lines not found among the 60k.
 See **visual_for_you.txt** to get a good look at each image.
-
-* I created ezMNIST from MNIST, which is the standard for testing model generalization.
-* Don't copy+paste the "ÿ" in ezMNIST. It'll paste as 2 unwanted bytes. Use C++ to copy.
+ezMNIST is highly compressible, I created it from MNIST. See create_ezMNIST.cpp.
 
 <br>
 <br>
