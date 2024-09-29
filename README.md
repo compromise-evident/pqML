@@ -152,7 +152,7 @@ ezMNIST is highly compressible, I created it from MNIST. See create_ezMNIST.cpp.
 <br>
 <br>
 
-## Make your own training-data
+## Make your own training & testing-data
 
 * Each line: ```label digit```, ```space```, ```up to 150 digits/underscores```, ```new line``` (\n.)
 * test.txt is the same but with items not found in train.txt.
