@@ -21,20 +21,20 @@ int main()
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
 	//                  Hidden layers (get new model per change)
-	int                   number_of_layers =     5; //2B  max
-	int                  neurons_per_layer =  5000; //2B  max
+	int                   number_of_layers =     2; //2B  max
+	int                  neurons_per_layer =   100; //2B  max
 	
 	//                               Semiprimes+factors
-	int                           p_length =    50; //50  max
-	int                           q_length =    50; //50  max
-	int                          pq_length =   100; //100 max
-	int             semiprimes_for_testing =  1000; //2B  max
-	int            semiprimes_for_training = 50000; //2B  max
+	int                           p_length =    10; //50  max
+	int                           q_length =    10; //50  max
+	int                          pq_length =    20; //100 max
+	int             semiprimes_for_testing =   100; //2B  max
+	int            semiprimes_for_training =  1000; //2B  max
 	
 	//                               Primes+composites
-	int         prime_and_composite_length =   150; //150 max
-	int  primes_and_composites_for_testing = 10000; //2B  max
-	int primes_and_composites_for_training = 90000; //2B  max
+	int         prime_and_composite_length =    20; //150 max
+	int  primes_and_composites_for_testing =  1000; //2B  max
+	int primes_and_composites_for_training = 10000; //2B  max
 	
 	//                                Options a,b,c,d
 	int           loop_til_percent_correct =    96; //1 - 100
