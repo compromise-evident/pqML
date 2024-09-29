@@ -17,7 +17,7 @@ Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 <br>
 <br>
 
-## When you're done experimenting with the default configuration
+## When you're done experimenting with lightweight configurations
 
 * Set ```number_of_layers``` to ~5, and ```neurons_per_layer``` to ~5000.
 * Adjust lengths & quantities.
