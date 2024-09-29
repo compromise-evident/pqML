@@ -2,7 +2,7 @@ Run it: ```apt install g++ geany libgmp-dev python3-torch```. Open the .cpp in G
 Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Terminal_1b17073284441cf6ea711cd80b0bd3fc.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Terminal_34b84f0280a32cb52225f4779bbef8ce.png">
 </p>
 
 <br>
@@ -11,7 +11,7 @@ Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 ## Prove RSA is cracked when a model aces your generated test.txt
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Configurable_ce528890a1569e7815d1a803dec993d1.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Configurable_1eb84ee35674cdd82dee791178298750.png">
 </p>
 
 That's right, a 5-deep 5,000-wide HL architecture gets 96% correct on test-ezMNIST.txt.
