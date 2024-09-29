@@ -16,6 +16,9 @@ Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
 That's right, a 5-deep 5,000-wide HL architecture gets 96% correct on test-ezMNIST.txt.
 And you'll need a big model for the monster numbers. A depth-to-width of 1:1k seems to work best.
+If you just want to quickly experiment with ezMNIST or small train.txt and test.txt files:
+* set number_of_layers to 2
+* set neurons_per_layer to 50
 
 <br>
 <br>
