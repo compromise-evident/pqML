@@ -274,9 +274,9 @@ int main()
 	//________________________________________________Loop_options_4,6________________________________________________//
 	else if(user_option == 'b')
 	{	cout << "Printing log...\n\n";
+		srand(time(0));
 		for(long long round = 1;; round++)
-		{	srand(time(0));
-			char  p[ 50001] = {'\0'};
+		{	char  p[ 50001] = {'\0'};
 			char  q[ 50001] = {'\0'};
 			char pq[200001] = {'\0'};
 			mpz_t randomness; mpz_init(randomness);
@@ -380,9 +380,9 @@ int main()
 	//________________________________________________Loop_options_5,6________________________________________________//
 	else if(user_option == 'c')
 	{	cout << "Printing log...\n\n";
+		srand(time(0));
 		for(long long round = 1;; round++)
-		{	srand(time(0));
-			char p[50001] = {'\0'};
+		{	char p[50001] = {'\0'};
 			char q[50001] = {'\0'};
 			mpz_t randomness; mpz_init(randomness);
 			mpz_t prime_p   ; mpz_init(prime_p   );
