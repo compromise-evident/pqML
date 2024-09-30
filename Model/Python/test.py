@@ -1,4 +1,4 @@
-# See again the testing on test.txt, without training.                          Run it: "apt install geany python3-torch". Open the .py in Geany.
+# See just the testing on test.txt without training.                            Run it: "apt install geany python3-torch". Open the .py in Geany.
 #                                                                               Replace "python" with "python3" in Geany's execute command. F5 to run.
 
 import torch
