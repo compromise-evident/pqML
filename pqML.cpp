@@ -1,5 +1,6 @@
 /// pqML - let AI factor semiprimes and recognize primes &                      Run it: "apt install g++ geany libgmp-dev python3-torch". Open the .cpp in Geany.
-///        composites. Or make your own train.txt & test.txt.                   Append "-lgmp" to Geany's compile & build commands. Hit F9 once. F5 to run.
+///        composites. Or make your own train.txt                               Append "-lgmp" to Geany's compile & build commands. Hit F9 once. F5 to run.
+///        & test.txt. Uses PyTorch.
 
 
 // Version 4.1.0
