@@ -37,7 +37,7 @@ int main()
 	int primes_and_composites_for_training = 10000; //2B  max
 	
 	//                                Options a,b,c,d
-	int           loop_til_percent_correct =    96; //1 - 100
+	int           loop_til_percent_correct =    97; //1 - 100
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
