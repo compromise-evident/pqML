@@ -2,7 +2,7 @@ Run it: ```apt install g++ geany libgmp-dev python3-torch```. Open the .cpp in G
 Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Terminal_34b84f0280a32cb52225f4779bbef8ce.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Terminal_2946a027688e2a4843e4f91b207d99d5.png">
 </p>
 
 <br>
@@ -11,7 +11,7 @@ Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 ## Prove RSA is cracked when a model aces your generated test.txt
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Configurable_e82ef74d22c114035bac97fe9176fa09.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/pqML/refs/heads/main/Other/Configurable_33f34ca856cd7347734e373ce86e977d.png">
 </p>
 
 <br>
