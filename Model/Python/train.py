@@ -60,8 +60,10 @@ for a in range(total_training_data_items):
 	optimizer.step()                       # Updates model constructively.
 in_stream.close()
 
-# Saves updated model to folder (overwrites.)
+# Saves updated model to file (overwrites.)
 torch.save(model.state_dict(), 'Model/Model.pth')
+
+# Tests model. //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Loads model from file, again.
 model.load_state_dict(torch.load('Model/Model.pth', map_location='cpu'))
@@ -69,7 +71,7 @@ model.load_state_dict(torch.load('Model/Model.pth', map_location='cpu'))
 # Gets number of items to test on.
 with open('test.txt', 'rb') as f: total_testing_data_items = f.read().count(10)
 
-# Tests model. //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Tests model.
 print("\n\n")
 with open('results.txt', 'w') as f: pass # Empty file.
 model.eval()
