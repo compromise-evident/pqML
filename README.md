@@ -194,7 +194,7 @@ Five zeros tokenized: 1000010000100001000010000100000000000000....
 ## Consensus of 100 models
 
 My top score on ezMNIST is 98.12% correctness.
-Except, none of my models got this score.
+Except, none of my models actually scored this high.
 Instead, it was the consensus of 100 models.
 Their results.txt files were merged based on byte occurrence using my github.com/compromise-evident/StatMerge tool.
 One model was trained 100 times while each results.txt was saved elsewhere for merging.
