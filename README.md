@@ -191,6 +191,17 @@ Five zeros tokenized: 1000010000100001000010000100000000000000....
 <br>
 <br>
 
+## Consensus of 100 models
+
+My top score on ezMNIST is 98.12% correctness.
+Except, none of my models got this score.
+Instead, it was the consensus of 100 models.
+Their results.txt files were merged based on byte occurrence using my github.com/compromise-evident/StatMerge tool.
+One model was trained 100 times while each results.txt was saved elsewhere for merging.
+
+<br>
+<br>
+
 <p align="center"><sub>Nomenclature: p & q are prime, p × q is semiprime (denoted pq.) p & q are factors of pq. Given only pq, it's statistically hard to find p & q.<sub/></p>
 <p align="center"><sub>RSA uses p & q of equal length. pq is then twice the length but not always. "pq_length = 40" discards any pq not 40 digits.<sub/></p>
 <p align="center"><sub>Here, 40-digit samples have two factors of 20 digits each, but you can set each length.<sub/></p>
