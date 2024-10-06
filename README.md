@@ -196,8 +196,29 @@ Five zeros tokenized: 1000010000100001000010000100000000000000....
 My top score on ezMNIST is 98.12% correctness.
 Except, none of my models actually scored this high.
 Instead, it was the consensus of 100 models.
-Their results.txt files were merged based on byte occurrence using my github.com/compromise-evident/StatMerge tool.
+Their results.txt files were merged based on byte occurrence using option e.
 One model was trained 100 times while each results.txt was saved elsewhere for later merging.
+
+<br>
+<br>
+
+## Merge models (option e)
+
+That's right, you can merge PyTorch models stored as efficient full ASCII.
+Preferably, merge models that are copies of one but trained in any way,
+or merge models that are snapshots of a model being updated forever.
+(This is fine because model training is nondeterministic by default.)
+Merging is based on byte occurrence.
+
+See, merging models that were initialized randomly then trained,
+leads to a model that appears random--exactly as useless as
+one initialized randomly and never trained.
+Instead, it appears effective to merge
+models whose many parameters
+are equal or close.
+Merge at least 50+ models at once.
+In my experience, such a merge results in a model unique to the 50,
+and whose usefulness is representative of the best-performing of those 50.
 
 <br>
 <br>
