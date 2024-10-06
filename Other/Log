@@ -2,6 +2,9 @@ pqML
 
 
 
+Version 4.2.0   Model merging (added my StatMerge.cpp verbatim.)
+                Oct 5 2024
+
 Version 4.1.0   Full automation.  (Options a,b,c,d loop other options, until  n%
                 correct on classification.) No changes made to the python files!
                 Sep 29 2024
